@@ -31,9 +31,9 @@ export function complement(sequence) {
 
   if (isDNA(sequence)) {
 
-    var rule = { 'A': 'T', 'T': 'A', 'G': 'C', 'C': 'G' };
+    let rule = { 'A': 'T', 'T': 'A', 'G': 'C', 'C': 'G' };
 
-    for (var i = 0; i < sequence.length; i++) {
+    for (let i = 0; i < sequence.length; i++) {
       sequence = setCharAt(sequence, i, rule[sequence.charAt(i)]);
     }
 

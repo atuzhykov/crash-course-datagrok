@@ -9,7 +9,7 @@ class ExercisesPackageDetectors extends DG.Package {
             return sequence.replace(/[^ATGC]/g, '').length == sequence.length;
           }
           
-        for (var i = 0; i < col.categories.length; i++) {
+        for (let i = 0; i < col.categories.length; i++) {
 
             if (!isDNA(col.categories[i])) { return null;}}
 
