@@ -44,7 +44,12 @@ export function complement(sequence) {
   return 'Not a DNA!'
 }
 
-
+//name: getOrders
+//input string country
+//output: dataframe df
+export async function getOrders() {
+  return await grok.data.query(`${packageName}:${queryName}`, { country: country});
+}
   
   
 

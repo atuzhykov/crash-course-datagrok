@@ -10,10 +10,11 @@ class AtuzhykovSequencePackageDetectors extends DG.Package {
           
         for (var i = 0; i < col.categories.length; i++) {
 
-            if (!isDNA(col.categories[i])) {return null;}}
+            if (!isDNA(col.categories[i])) { console.log("At least one sequence is not DNA"); return null;}}
 
         col.semType = 'dna_nucleotide';
-        
+        console.log("Sem type dna_nucleotide was assigned");
+
         return col.semType;
     }
 }
