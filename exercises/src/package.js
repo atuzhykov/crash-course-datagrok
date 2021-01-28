@@ -45,12 +45,12 @@ export function complement(sequence) {
 }
 
 //name: getOrders
-//input string country
 //output: dataframe df
 export async function getOrders() {
-  return await grok.data.query(`${packageName}:${queryName}`, { country: country});
+   let queryName = 'ordersByCountry'
+   let packageName = 'Exercises'
+  return await grok.data.query(`${packageName}:${queryName}`, { country: 'USA'});
 }
   
   
-
 

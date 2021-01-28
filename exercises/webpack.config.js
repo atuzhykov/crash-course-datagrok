@@ -16,7 +16,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    library: 'atuzhykovsequence',
+    library: 'exercises',
     libraryTarget: 'var',
     path: path.resolve(__dirname, 'dist'),
   },

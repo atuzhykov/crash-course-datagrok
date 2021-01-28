@@ -1,0 +1,19 @@
+{
+	"name": "exercises",
+	"fullName": "exercises",
+	"version": "0.0.1",
+	"description": "",
+	"dependencies": {
+		"datagrok-api": "latest"
+	},
+	"scripts": {
+		"debug-exercises": "grok publish --rebuild",
+		"release-exercises": "grok publish --rebuild --release",
+		"build-exercises": "webpack",
+		"build": "webpack",
+		"debug-exercises-dev": "grok publish dev --rebuild",
+		"release-exercises-dev": "grok publish dev --rebuild --release",
+		"debug-exercises-local": "grok publish local --rebuild",
+		"release-exercises-local": "grok publish local --rebuild --release"
+	}
+}
