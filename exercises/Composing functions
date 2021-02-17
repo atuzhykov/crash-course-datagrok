@@ -1,0 +1,30 @@
+//name: CountSubsequenceTable
+//language: javascript
+//input: dataframe df
+//input: column colName
+//input: string subseq = ATG
+
+grok.functions.call(
+  "Andrewtuzhykov:CountSubsequencePython", {
+    'inputDf': DG.DataFrame.fromColumns([df.col(colName)]),
+    'outputColName': `N(${subseq})`,
+    'subseq': subseq 
+  }).then((resultDf) => {
+    df.columns.insert(resultDf.columns.byIndex(0));
+  });
+  
+  
+  
+#name: CountSubsequencePython
+#language: python
+#input: dataframe inputDf
+#input: column inputColName
+#input: string outputColName
+#input: string subseq
+#output: dataframe outputDf
+
+
+outputDf = pd.DataFrame()
+outputDf[outputColName] = inputDf[inputColName].apply(lambda x: x.count(subseq))
+
+
