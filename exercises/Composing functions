@@ -28,3 +28,18 @@ outputDf = pd.DataFrame()
 outputDf[outputColName] = inputDf[inputColName].apply(lambda x: x.count(subseq))
 
 
+//name: CountSubsequenceJS
+//language: javascript
+//input: dataframe inputDf
+//input: string outputColName 
+//input: string subseq
+//output: dataframe outputDf
+
+let rgxp = new RegExp(subseq, "g");
+let newCol = df.columns.byIndex(ind);;
+for (let i = 0; i < newCol.length; ++i) { 
+  const seq = inputDf.get('sequence', i);
+  const count = (seq.match(rgxp) || []).length; 
+  newCol.set(i, count);
+}
+outputDf = DG.DataFrame.fromColumns([newCol]);
