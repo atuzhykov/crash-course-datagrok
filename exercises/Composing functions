@@ -36,7 +36,7 @@ outputDf[outputColName] = inputDf[inputColName].apply(lambda x: x.count(subseq))
 //output: dataframe outputDf
 
 let rgxp = new RegExp(subseq, "g");
-let newCol = df.columns.byIndex(ind);;
+let newCol = df.columns.byIndex(0);;
 for (let i = 0; i < newCol.length; ++i) { 
   const seq = inputDf.get('sequence', i);
   const count = (seq.match(rgxp) || []).length; 
